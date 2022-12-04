@@ -1,3 +1,12 @@
+// Common JS
+document.querySelectorAll('.watch-control, .controls a, .iphone-btn').forEach(control => {
+  control.addEventListener('click', e => {
+      e.preventDefault()
+  })
+})
+// End of Common JS
+
+
 // section-1
 
 // slideShow
@@ -99,3 +108,36 @@ window.addEventListener("scroll", () => {
   }
 });
 // End of Section 3
+
+// Section 4
+const watchBands = document.querySelector('.watch-bands')
+const watchCases = document.querySelector('.watch-cases')
+
+const watchTopControl = document.querySelector('.watch-top-control')
+const watchRightControl = document.querySelector('.watch-right-control')
+const watchBottomControl = document.querySelector('.watch-bottom-control')
+const watchLeftControl = document.querySelector('.watch-left-control')
+
+let axisY = 0
+let axisX = 0
+
+watchTopControl.addEventListener('click', () => {
+  watchCases.style.marginTop = `${axisY -= 70}rem`
+  hideControl()
+})
+
+watchBottomControl.addEventListener('click', () => {
+  watchCases.style.marginTop = `${axisY += 70}rem`
+  hideControl()
+})
+
+watchRightControl.addEventListener('click', () => {
+  watchBands.style.marginRight = `${axisX += 70}rem`
+  hideControl()
+})
+
+watchLeftControl.addEventListener('click', () => {
+  watchBands.style.marginRight = `${axisX -= 70}rem`
+  hideControl()
+})
+// End of Section 4
